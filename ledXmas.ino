@@ -1,9 +1,7 @@
 //#include <FS.h>
 //#include <Arduino.h>
 #include <ESP8266WiFi.h>          //https://github.com/esp8266/Arduino
-// Wifi Manager
-//#include <DNSServer.h>
-//#include <ESP8266WebServer.h>
+
 
 //#include <Ticker.h>
 //Ticker TickerUpd;
