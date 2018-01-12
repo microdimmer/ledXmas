@@ -1,7 +1,4 @@
-//#include <FS.h>
-//#include <Arduino.h>
 #include <ESP8266WiFi.h>          //https://github.com/esp8266/Arduino
-
 
 //#include <Ticker.h>
 //Ticker TickerUpd;
@@ -169,42 +166,6 @@ void rainbowCycle(uint8_t wait) {
     Blynk.run();
     delay(wait);
     if (modeChanged) { modeChanged = 0; return; }
-  }
-}
-
-//Theatre-style crawling lights.
-void theaterChase(uint32_t c, uint8_t wait) {
-  for (int j=0; j<10; j++) {  //do 10 cycles of chasing
-    for (int q=0; q < 3; q++) {
-      for (uint16_t i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, c);    //turn every third pixel on
-      }
-      strip.show();
-      Blynk.run();
-      delay(wait);
-      for (uint16_t i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, 0);        //turn every third pixel off
-      }
-      if (modeChanged) { modeChanged = 0; return; }
-    }
-  }
-}
-
-//Theatre-style crawling lights with rainbow effect
-void theaterChaseRainbow(uint8_t wait) {
-  for (int j=0; j < 256; j++) {     // cycle all 256 colors in the wheel
-    for (int q=0; q < 3; q++) {
-      for (uint16_t i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, Wheel( (i+j) % 255));    //turn every third pixel on
-      }
-      strip.show();
-      Blynk.run();
-      delay(wait);
-      for (uint16_t i=0; i < strip.numPixels(); i=i+3) {
-        strip.setPixelColor(i+q, 0);        //turn every third pixel off
-      }
-      if (modeChanged) { modeChanged = 0; return; }
-    }
   }
 }
 
