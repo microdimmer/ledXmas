@@ -9,7 +9,7 @@ const uint8_t MAX_MODES = 6;
 SimpleTimer timer;
 char blynk_token[] PROGMEM = {"179160c1078a4f2bb4256740577a00c0"}; // Blynk token
 char SSID_NAME[] PROGMEM = {"Siskotryas2"};
-char PASS[] PROGMEM = {"Gigadi750N82D"};
+char PASS[] PROGMEM = {"12345"};
 
 uint8_t modeStrip = 0;
 uint8_t modeChanged = 0;
